@@ -1,0 +1,27 @@
+/* GameBoard.css */
+.board {
+  width: 750px;
+  height: 750px;
+  display: grid;
+  grid-template-columns: repeat(25, 1fr);
+  grid-template-rows: repeat(25, 1fr);
+  background-color: #fff;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #eee;
+}
+
+.cell.snake {
+  background-color: #4caf50;
+}
+
+.cell.food.apple::before {
+  content: ' 🍎';
+}
+
+.cell.food.frog::before {
+  content: ' 🐸';
+}
