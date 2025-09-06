@@ -1,6 +1,5 @@
 
-// App.jsx
-import React from 'react';
+// App.tsx
 import SnakeGame from './components/SnakeGame';
 import './App.css';
 
