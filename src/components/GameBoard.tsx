@@ -1,8 +1,13 @@
-// GameBoard.jsx
-import React from 'react';
+// GameBoard.tsx
 import './GameBoard.css';
 
-const GameBoard = ({ snake, food, gridSize }) => {
+interface GameBoardProps {
+  snake: number[][];
+  food: { type: string; position: number[] };
+  gridSize: number;
+}
+
+const GameBoard: React.FC<GameBoardProps> = ({ snake, food, gridSize }) => {
   const renderCells = () => {
     const cells = [];
 
