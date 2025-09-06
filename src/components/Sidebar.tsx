@@ -1,8 +1,12 @@
-// Sidebar.jsx
-import React from 'react';
+// Sidebar.tsx
 import './Sidebar.css';
 
-const Sidebar = ({ score, gameOver }) => (
+interface SidebarProps {
+  score: number;
+  gameOver: boolean;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ score, gameOver }) => (
   <div className="sidebar">
     <h2>Snake Game</h2>
     <p><strong>Score:</strong> {score}</p>
