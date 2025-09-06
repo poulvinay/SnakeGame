@@ -1,9 +1,14 @@
-// SnakeGame.jsx
-import React, { useState, useEffect } from 'react';
+// SnakeGame.tsx
+import { useState, useEffect } from 'react';
 import GameBoard from './GameBoard';
 import Sidebar from './Sidebar';
 
 const gridSize = 25;
+
+interface Food {
+  type: string;
+  position: number[];
+}
 
 const getRandomPosition = () => [
   Math.floor(Math.random() * gridSize),
@@ -13,7 +18,7 @@ const getRandomPosition = () => [
 const SnakeGame = () => {
   const [snake, setSnake] = useState([[10, 10]]);
   const [direction, setDirection] = useState([0, -1]);
-  const [food, setFood] = useState({ type: 'apple', position: getRandomPosition() });
+  const [food, setFood] = useState<Food>({ type: 'apple', position: getRandomPosition() });
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
@@ -43,8 +48,8 @@ const SnakeGame = () => {
     setSnake(newSnake);
   };
 
-  const spawnFood = (snakeBody) => {
-    let newPosition;
+  const spawnFood = (snakeBody: number[][]) => {
+    let newPosition: number[];
     do {
       newPosition = getRandomPosition();
     } while (snakeBody.some(seg => seg[0] === newPosition[0] && seg[1] === newPosition[1]));
@@ -62,7 +67,7 @@ const SnakeGame = () => {
   }, [snake, direction, food, gameOver]);
 
   useEffect(() => {
-    const handleKey = (e) => {
+    const handleKey = (e: KeyboardEvent) => {
       switch (e.key) {
         case 'ArrowUp': setDirection([0, -1]); break;
         case 'ArrowDown': setDirection([0, 1]); break;
