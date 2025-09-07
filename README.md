@@ -1,5 +1,5 @@
 # Snake Game
-
+## [Play Online](https://snake-ochre-alpha.vercel.app)
 This is a simple snake game implemented using React and Vite. To play, simply open the project in your browser and use the arrow keys to control the snake. The goal is to eat as many apples as possible without running into the wall or yourself.
 
 The game is written in TypeScript and uses the React Hooks API. The game state is stored in the component's state and the game logic is implemented in the component's event handlers.
